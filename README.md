@@ -22,3 +22,8 @@ Hệ thống được tạo ra sẽ bao gồm:
 - 1 load balancer (cân bằng tải) dùng để phân chia, định tuyến các requests từ người dùng đến các servers
 
 Khi người dùng gửi request đến hệ thống LB sẽ tiếp nhận và chuyển tiếp request đến các app servers. App server sẽ xử lý request, thao tác với database server nếu cần thiết và trả request về cho người dùng thông qua LB.
+### Thành viên nhóm bài tập
+- Vũ Văn Chức
+- Trịnh Văn Đức
+- Lê Hải Đăng
+- Lê Ngọc Hiệp
