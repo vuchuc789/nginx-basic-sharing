@@ -15,6 +15,7 @@ Chạy file cấu hình:
 $ cd INT3310_2-Seminar
 $ npm start
 ```
+Ứng dụng sẽ chạy trên cổng 5000 ([localhost:5000](http://localhost:5000))
 ### Mô tả
 Hệ thống được tạo ra sẽ bao gồm:
 - 3 app servers chạy nodejs dùng để xử lí dữ liệu và thao tác với database
