@@ -1,0 +1,68 @@
+version: '3'
+services: 
+  app1:
+    build: ./app
+    container_name: 'app1-container'
+    restart: unless-stopped
+    environment:
+      SERVER_NAME: 'server 01'
+      PORT: 5000
+      MONGO_URI: 'mongodb://db:db/todo' 
+    links:
+      - db
+    networks:
+      - private-net
+  app2:
+    build: ./app
+    container_name: 'app2-container'
+    restart: unless-stopped
+    environment:
+      SERVER_NAME: 'server 02'
+      PORT: 5000
+      MONGO_URI: 'mongodb://db:db/todo' 
+    links:
+      - db
+    networks:
+      - private-net
+  app3:
+    build: ./app
+    container_name: 'app3-container'
+    restart: unless-stopped
+    environment:
+      SERVER_NAME: 'server 03'
+      PORT: 5000
+      MONGO_URI: 'mongodb://db:db/todo' 
+    links:
+      - db
+    networks:
+      - private-net
+  db:
+    image: 'mongo'
+    container_name: 'db-container'
+    restart: unless-stopped
+    #environment:
+      #MONGO_INITDB_ROOT_USERNAME: root
+      #MONGO_INITDB_ROOT_PASSWORD: rootpassword
+      #MONGO_INITDB_DATABASE: todo
+    volumes:
+     - db-data:/data/db
+    networks:
+      - private-net
+  lb:
+    image: 'nginx'
+    container_name: 'lb-container'
+    restart: unless-stopped
+    ports:
+      - 5000:80
+    links:
+      - app1
+      - app2
+    volumes:
+      - ./lb/:/etc/nginx/conf.d/
+    networks:
+      - private-net
+
+volumes:
+  db-data:
+networks:
+  private-net:
