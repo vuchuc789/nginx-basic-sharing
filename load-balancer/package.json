@@ -1,0 +1,25 @@
+{
+  "name": "docker",
+  "version": "1.0.0",
+  "description": "docker",
+  "scripts": {
+    "start": "docker-compose up",
+    "restart": "docker-compose down && docker-compose build && docker-compose up",
+    "stop": "docker-compose down",
+    "build": "docker-compose build",
+    "silence": "docker-compose up -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuchuc781999/INT3310_2-Seminar.git"
+  },
+  "keywords": [
+    "docker"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vuchuc781999/INT3310_2-Seminar/issues"
+  },
+  "homepage": "https://github.com/vuchuc781999/INT3310_2-Seminar#readme"
+}
