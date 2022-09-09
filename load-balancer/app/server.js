@@ -77,6 +77,12 @@ app.get('/', (req, res) => {
   res.send(`Hello from ${process.env.SERVER_NAME}`);
 });
 
+app.get('/test-cache', (req, res) => {
+  setTimeout(() => {
+    res.send('response after 10 s');
+  }, 10000);
+});
+
 app.listen(PORT, HOST, () => {
   console.log(`App is running on ${PORT}`);
 });
